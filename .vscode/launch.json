@@ -9,7 +9,7 @@
         "program": "${workspaceFolder}",
         "args": [
           "2023",
-          "day3"
+          "day4"
         ]
       }
     ]
