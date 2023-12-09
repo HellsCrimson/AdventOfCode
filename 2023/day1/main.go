@@ -1,10 +1,15 @@
 package day1
 
 import (
+	_ "embed"
+	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
 )
+
+//go:embed input.txt
+var input string
 
 var (
 	regexFirstSimple  = "([0-9]).*"
@@ -13,8 +18,13 @@ var (
 	regexSecondHard   = ".*(one|two|three|four|five|six|seven|eight|nine|[0-9])"
 )
 
-func ParseDataSimple(data string) int {
-	splitted := strings.Split(data, "\n")
+func Main() {
+	fmt.Println(parseDataSimple())
+	fmt.Println(parseDataHard())
+}
+
+func parseDataSimple() int {
+	splitted := strings.Split(input, "\n")
 
 	sum := 0
 	for _, line := range splitted {
@@ -29,8 +39,8 @@ func ParseDataSimple(data string) int {
 	return sum
 }
 
-func ParseDataHard(data string) int {
-	splitted := strings.Split(data, "\n")
+func parseDataHard() int {
+	splitted := strings.Split(input, "\n")
 
 	sum := 0
 	for _, line := range splitted {

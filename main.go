@@ -1,11 +1,11 @@
+/*
+Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import (
-	_ "embed"
-)
-
-//go:embed input.txt
-var input string
+import "adventofcode/cmd"
 
 func main() {
+	cmd.Execute()
 }

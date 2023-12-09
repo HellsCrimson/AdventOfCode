@@ -1,12 +1,22 @@
 package day2
 
 import (
+	_ "embed"
+	"fmt"
 	"strconv"
 	"strings"
 )
 
-func ParseDataSimple(data string) int {
-	splitted := strings.Split(data, "\n")
+//go:embed input.txt
+var input string
+
+func Main() {
+	fmt.Println(parseDataSimple())
+	fmt.Println(parseDataHard())
+}
+
+func parseDataSimple() int {
+	splitted := strings.Split(input, "\n")
 
 	sum := 0
 	for _, line := range splitted {
@@ -48,8 +58,8 @@ func ParseDataSimple(data string) int {
 	return sum
 }
 
-func ParseDataHard(data string) int {
-	splitted := strings.Split(data, "\n")
+func parseDataHard() int {
+	splitted := strings.Split(input, "\n")
 
 	sum := 0
 	for _, line := range splitted {
